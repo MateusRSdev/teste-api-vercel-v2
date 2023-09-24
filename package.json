@@ -2,8 +2,7 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "dev": "vite",
-        "build": "vite build"
+        "build": "sanity build"
     },
     "devDependencies": {
         "axios": "^1.1.2",
