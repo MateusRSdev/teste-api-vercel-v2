@@ -12,4 +12,5 @@
 // );
 // $response->send();
 // $kernel->terminate($request, $response);
+require "assets.php";
 require __DIR__ . '/../public/index.php';
