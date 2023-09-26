@@ -1,9 +1,12 @@
 {
     "version": 2,
       "framework": null,
+      "builds": [
+        { "src": "/api/cors.js", "use": "@vercel/node" },
+        { "src": "/public/**", "use": "@vercel/static" }
+    ],
       "functions": {
         "api/index.php": { "runtime": "vercel-php@0.6.0" },
-        "api/cors.js":{"runtime":"@vercel/node"},
         "api/assets.php": { "runtime": "vercel-php@0.6.0" }
     },
     "routes": [
