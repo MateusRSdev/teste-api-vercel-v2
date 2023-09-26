@@ -4,10 +4,13 @@
  * Built assets aren't currently routeable via vercel-php
  * Manually route assets to be found
  */
-if ($_GET['type'] === 'css') {
+$file = $_GET['assets'];
+if (str_ends_with($file, '.css')) {
     header("Content-type: text/css; charset: UTF-8");
-    echo require __DIR__ . '/../public/css/' . basename($_GET['file']);
-} else if ($_GET['type'] === 'js') {
+    return require '/var/task/user/public/build/assets/' . basename($file);
+    // echo require __DIR__ . '/../assets/' . basename($file);
+} else if (str_ends_with($file, '.js')) {
     header('Content-Type: application/javascript; charset: UTF-8');
-    echo require __DIR__ . '/../public/js/' . basename($_GET['file']);
+    return require '/var/task/user/public/build/assets/' . basename($file);
+    // echo require __DIR__ . '/../assets/' . basename($file);
 }
