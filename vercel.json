@@ -1,13 +1,11 @@
 {
     "version": 2,
       "framework": null,
-      "builds": [
-        { "src": "/api/index.php", "use": "vercel-php@0.6.0" },
-        { "src": "/api/assets.php", "use": "vercel-php@0.6.0" },
-        { "src": "/api/cors.js", "use": "@vercel/node" },
-        { "src": "/public/**", "use": "@vercel/static" }
-    ],
+      "functions": {
+        "api/index.php": { "runtime": "vercel-php@0.6.0" },
 
+        "api/assets.php": { "runtime": "vercel-php@0.6.0" }
+    },
     "routes": [
         {
             "src": "/build/assets/(.*)",
